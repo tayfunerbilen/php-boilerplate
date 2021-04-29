@@ -1,0 +1,19 @@
+{
+    "name": "prototurk/php-boilerplate",
+    "description": "PHP Başlangıç Yapısı",
+    "authors": [
+        {
+            "name": "tayfunerbilen",
+            "email": "tayfunerbilen@gmail.com"
+        }
+    ],
+    "require": {
+        "izniburak/router": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "./app",
+            "Core\\": "./core"
+        }
+    }
+}
