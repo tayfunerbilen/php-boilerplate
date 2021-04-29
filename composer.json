@@ -8,7 +8,8 @@
         }
     ],
     "require": {
-        "izniburak/router": "^2.2"
+        "izniburak/router": "^2.2",
+        "jenssegers/blade": "^1.4"
     },
     "autoload": {
         "psr-4": {

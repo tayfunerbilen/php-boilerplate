@@ -3,8 +3,9 @@
 namespace App\Controllers;
 
 use App\Middlewares\CheckAuth;
+use Core\Controller;
 
-class Home
+class Home extends Controller
 {
 
     public $middlewareBefore = [
@@ -13,7 +14,9 @@ class Home
 
     public function main()
     {
-        return 'index metodu';
+        $name = 'Tayfun';
+        $surname = '<b>Erbilen</b>';
+        return $this->view('home', compact('name', 'surname'));
     }
 
     public function uyelerSayfasi()
