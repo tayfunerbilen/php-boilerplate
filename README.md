@@ -15,7 +15,7 @@ Daha sonra ilgili dizin içinde paketleri yüklemek
 composer install
 ```
 
-Ve `.env.example.php` dosyasını `.env.example.php` olarak değiştirip kendi ayarlarınızı belirtmek.
+Ve `.env.example.php` dosyasını `.env.php` olarak değiştirip kendi ayarlarınızı belirtmek.
 
 Artık veritabanınızı oluşturup kodlamaya başlayabilirsiniz.
 
