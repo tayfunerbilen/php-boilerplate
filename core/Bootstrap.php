@@ -4,6 +4,9 @@ namespace Core;
 
 use Buki\Router\Router;
 use Valitron\Validator;
+use Arrilot\DotEnv\DotEnv;
+use Whoops\Handler\PrettyPageHandler;
+use Whoops\Run;
 
 class Bootstrap
 {
@@ -14,6 +17,16 @@ class Bootstrap
 
     public function __construct()
     {
+
+        DotEnv::load(dirname(__DIR__) . '/.env.php');
+
+        $whoops = new Run();
+        $whoops->pushHandler(new PrettyPageHandler());
+
+        if (genv('DEVELOPMENT')) {
+            $whoops->register();
+        }
+
         $this->router = new Router([
             'paths' => [
                 'controllers' => 'app/controllers',
