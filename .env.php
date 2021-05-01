@@ -1,6 +1,8 @@
 <?php
 
 return [
-    'DB_HOST' => 'localhost',
+    'DB_NAME' => 'boilerplate',
+    'DB_USER' => 'root',
+    'DB_PASSWORD' => 'root',
     'DEVELOPMENT' => true
 ];

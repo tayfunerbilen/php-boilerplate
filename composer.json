@@ -12,7 +12,8 @@
         "jenssegers/blade": "^1.4",
         "vlucas/valitron": "^1.4",
         "filp/whoops": "^2.12",
-        "arrilot/dotenv-php": "^2.0"
+        "arrilot/dotenv-php": "^2.0",
+        "illuminate/database": "^8.40"
     },
     "autoload": {
         "psr-4": {

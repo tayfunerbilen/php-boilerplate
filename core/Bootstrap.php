@@ -3,6 +3,7 @@
 namespace Core;
 
 use Buki\Router\Router;
+use Illuminate\Database\Capsule\Manager as Capsule;
 use Valitron\Validator;
 use Arrilot\DotEnv\DotEnv;
 use Whoops\Handler\PrettyPageHandler;
@@ -23,9 +24,25 @@ class Bootstrap
         $whoops = new Run();
         $whoops->pushHandler(new PrettyPageHandler());
 
-        if (genv('DEVELOPMENT')) {
+        if (config('DEVELOPMENT')) {
             $whoops->register();
         }
+
+        $capsule = new Capsule;
+
+        $capsule->addConnection([
+            'driver'    => 'mysql',
+            'host'      => config('DB_HOST', 'localhost'),
+            'database'  => config('DB_NAME'),
+            'username'  => config('DB_USER'),
+            'password'  => config('DB_PASSWORD'),
+            'charset'   => config('DB_CHARSET', 'utf8mb4'),
+            'collation' => config('DB_COLLATION', 'utf8mb4_unicode_ci'),
+            'prefix'    => config('DB_PREFIX'),
+        ]);
+
+        $capsule->setAsGlobal();
+        $capsule->bootEloquent();
 
         $this->router = new Router([
             'paths' => [
