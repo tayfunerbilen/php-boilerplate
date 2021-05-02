@@ -35,7 +35,8 @@
             <li>
                 #{{ $post->id }} <br>
                 {{ $post->content }} <br>
-                Ekleyen: {{ $post->user->name }}
+                Ekleyen: {{ $post->user->name }} <br>
+                Eklenme Tarihi: @timeAgo($post->created_at)
             </li>
         @endforeach
     </ul>

@@ -33,8 +33,8 @@
             <li>
                 #<?php echo e($post->id); ?> <br>
                 <?php echo e($post->content); ?> <br>
-                Ekleyen: <?php echo e($post->user->name); ?>
-
+                Ekleyen: <?php echo e($post->user->name); ?> <br>
+                Eklenme Tarihi: <?=timeAgo($post->created_at)?>
             </li>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </ul>

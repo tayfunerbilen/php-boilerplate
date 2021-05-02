@@ -3,6 +3,7 @@
 namespace Core;
 
 use Buki\Router\Router;
+use Carbon\Carbon;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Valitron\Validator;
 use Arrilot\DotEnv\DotEnv;
@@ -27,6 +28,8 @@ class Bootstrap
         if (config('DEVELOPMENT')) {
             $whoops->register();
         }
+
+        Carbon::setLocale(config('LOCALE', 'tr_TR'));
 
         $capsule = new Capsule;
 

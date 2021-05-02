@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Posts;
 use App\Models\User;
 use App\Models\Users;
+use Carbon\Carbon;
 use Core\Controller;
 use Illuminate\Database\Capsule\Manager;
 use Symfony\Component\HttpFoundation\Request;
@@ -64,6 +65,18 @@ class Home extends Controller
     public function uyelerSayfasi()
     {
         return 'deneme sayfası';
+    }
+
+    public function tarihler()
+    {
+
+        echo Carbon::parse('2021-05-02 11:10:32')->add(1, 'year')->diffForHumans();
+
+        $periods = Carbon::parse('2021-05-01')->daysUntil('2021-05-23', 5);
+        foreach ($periods as $period){
+            echo $period->toIso8601String() . '<br>';
+        }
+
     }
 
 }
