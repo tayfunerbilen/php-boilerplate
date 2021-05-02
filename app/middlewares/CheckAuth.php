@@ -7,8 +7,9 @@ class CheckAuth
 
     public function handle()
     {
-        // kontroller
-
+        if (!auth()->isLoggedIn()){
+            return false;
+        }
         return true;
     }
 

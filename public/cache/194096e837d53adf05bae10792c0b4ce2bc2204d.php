@@ -20,6 +20,9 @@
 <body>
 
 <main>
+
+    <?php if (isset($errors['error'])): ?><div class="error-msg"><?=$errors['error'][0]?></div><?php endif; ?>
+
     <?php echo $__env->yieldContent('content'); ?>
 </main>
 

@@ -11,3 +11,8 @@ function timeAgo($date)
 {
     return \Carbon\Carbon::parse($date)->diffForHumans();
 }
+
+function auth()
+{
+    return \Core\Auth::getInstance();
+}

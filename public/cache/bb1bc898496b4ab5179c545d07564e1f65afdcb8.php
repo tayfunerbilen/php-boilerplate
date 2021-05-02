@@ -1,6 +1,23 @@
 <?php $__env->startSection('title', 'Anasayfa'); ?>
 
 <?php $__env->startSection('content'); ?>
+
+    <?php if(auth()->guard()->check()): ?>
+        <h3>
+            Hoşgeldin, <?php echo e(auth()->getName()); ?>
+
+            <a href="http://localhost/boilerplate/logout">[Çıkış yap]</a>
+        </h3>
+    <?php endif; ?>
+
+    <?php if(auth()->guard()->guest()): ?>
+        <h3>
+            Hoşgeldin ziyaretçi!
+            <a href="http://localhost/boilerplate/login">[Giriş yap]</a>
+            <a href="http://localhost/boilerplate/register">[Kayıt ol]</a>
+        </h3>
+    <?php endif; ?>
+
     <form style="display: none" action="" method="post">
         <ul>
             <li>

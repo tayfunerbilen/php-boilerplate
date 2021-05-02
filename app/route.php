@@ -2,6 +2,14 @@
 
 $app->router->controller('/', 'Home');
 
+$app->router->any('/login', 'Auth@login', [
+    'before' => 'CheckNotAuth'
+]);
+$app->router->any('/register', 'Auth@register', [
+    'before' => 'CheckNotAuth'
+]);
+$app->router->get('/logout', 'Auth@logout');
+
 $app->router->get('/about', function(){
     return 'about page';
 });

@@ -14,7 +14,8 @@
         "filp/whoops": "^2.12",
         "arrilot/dotenv-php": "^2.0",
         "illuminate/database": "^8.40",
-        "nesbot/carbon": "^2.46"
+        "nesbot/carbon": "^2.46",
+        "aura/session": "^2.1"
     },
     "autoload": {
         "psr-4": {

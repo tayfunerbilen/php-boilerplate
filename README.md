@@ -28,7 +28,7 @@ Artık veritabanınızı oluşturup kodlamaya başlayabilirsiniz.
 - [x] Ayarlar için --> [arrilot/dotenv-php](https://github.com/arrilot/dotenv-php)
 - [x] Veritabanı işlemleri için --> [illuminate/database](https://github.com/illuminate/database)
 - [x] Tarih işlemleri için --> [briannesbitt/Carbon](https://github.com/briannesbitt/Carbon)
-- [ ] Oturum yönetimi için --> [auraphp/Aura.Session](https://github.com/auraphp/Aura.Session)
+- [x] Oturum yönetimi için --> [auraphp/Aura.Session](https://github.com/auraphp/Aura.Session)
 - [ ] Dosya ve resim işlemleri için --> [verot/class.upload.php](https://packagist.org/packages/verot/class.upload.php)
 
 Not: Paket listesine henüz eklenmedik paketler olabilir, videolarda ekledikçe güncelleyeceğim.

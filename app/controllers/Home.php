@@ -15,9 +15,9 @@ use Symfony\Component\HttpFoundation\Request;
 class Home extends Controller
 {
 
-    public $middlewareBefore = [
-        CheckAuth::class
-    ];
+//    public $middlewareBefore = [
+//        CheckAuth::class
+//    ];
 
     public function main(Request $request)
     {
@@ -43,7 +43,7 @@ class Home extends Controller
             ]);
             if ($this->validator->validate()) {
                 $data = $this->validator->data();
-                $data['user_id'] = 2;
+                $data['user_id'] = auth()->getId();
                 Post::create($data);
             }
         }
