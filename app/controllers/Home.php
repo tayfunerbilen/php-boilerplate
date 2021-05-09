@@ -37,14 +37,31 @@ class Home extends Controller
 //        }
 
         if ($request->getMethod() === 'POST') {
+
             $this->validator->rule('required', ['content']);
             $this->validator->labels([
                 'content' => 'İçerik'
             ]);
+
+            $upload = upload('image')->onlyImages()->check();
+            if ($error = $upload->error()){
+                $this->validator->error('image', $error);
+            }
+
             if ($this->validator->validate()) {
+
+                $small = $upload->resize(500)->prefix('small')->to('upload/posts');
+                $original = $upload->to('upload/posts');
+
                 $data = $this->validator->data();
                 $data['user_id'] = auth()->getId();
+                $data['image'] = json_encode([
+                    'small' => $small->getFileWithPath(),
+                    'original' => $original->getFile()
+                ]);
+
                 Post::create($data);
+
             }
         }
 
@@ -73,7 +90,7 @@ class Home extends Controller
         echo Carbon::parse('2021-05-02 11:10:32')->add(1, 'year')->diffForHumans();
 
         $periods = Carbon::parse('2021-05-01')->daysUntil('2021-05-23', 5);
-        foreach ($periods as $period){
+        foreach ($periods as $period) {
             echo $period->toIso8601String() . '<br>';
         }
 

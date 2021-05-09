@@ -10,6 +10,7 @@ class Post extends Model
 //    public $timestamps = false;
     protected $fillable = [
         'content',
+        'image',
         'user_id'
     ];
 

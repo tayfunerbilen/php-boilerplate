@@ -16,3 +16,8 @@ function auth()
 {
     return \Core\Auth::getInstance();
 }
+
+function upload($name)
+{
+    return \Core\Upload::getInstance($name);
+}

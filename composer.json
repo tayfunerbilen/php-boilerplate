@@ -15,7 +15,8 @@
         "arrilot/dotenv-php": "^2.0",
         "illuminate/database": "^8.40",
         "nesbot/carbon": "^2.46",
-        "aura/session": "^2.1"
+        "aura/session": "^2.1",
+        "verot/class.upload.php": "^2.1"
     },
     "autoload": {
         "psr-4": {

@@ -40,15 +40,24 @@
         </ul>
     </form>
 
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <textarea name="content" cols="30" class="@hasError('content')" rows="5"></textarea> <br>
-        @getError('content')
+        @getError('content') <br>
+        <input type="file" name="image" class="@hasError('image')"> <br>
+        @getError('image') <br>
         <button type="submit">Kaydet</button>
     </form>
 
     <ul>
         @foreach($posts as $post)
             <li>
+
+                @if($post->image)
+                    <div>
+                        <img src="http://localhost/boilerplate/upload/posts/{{ $post->image }}" alt="">
+                    </div>
+                @endif
+
                 #{{ $post->id }} <br>
                 {{ $post->content }} <br>
                 Ekleyen: {{ $post->user->name }} <br>
