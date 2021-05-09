@@ -1,6 +1,8 @@
 <?php
 
-$app->router->controller('/', 'Home');
+//$app->router->controller('/', 'Home');
+
+$app->router->any('/', 'Home@main');
 
 $app->router->any('/login', 'Auth@login', [
     'before' => 'CheckNotAuth'
@@ -29,6 +31,8 @@ $app->router->group('/admin', function($router){
     });
 
 });
+
+$app->router->get('/api/posts', 'Api@posts');
 
 $app->router->error(function(){
     die('<h3>Sayfa bulunamadı!</h3>');

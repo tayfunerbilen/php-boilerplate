@@ -16,8 +16,7 @@ class Auth extends Controller
             if ($this->validator->validate()) {
                 $user = auth()->login($this->validator->data());
                 if ($user) {
-                    header('Location:http://localhost/boilerplate');
-                    return;
+                    return redirect()->send();
                 } else {
                     $this->validator->error('error', 'Kullanıcı adı ya da şifre hatalı!');
                 }
@@ -40,8 +39,7 @@ class Auth extends Controller
                 } else {
                     $user = auth()->register($data);
                     if ($user) {
-                        header('Location:http://localhost/boilerplate');
-                        return;
+                        return redirect()->send();
                     } else {
                         $this->validator->error('error', 'Bir sorun oluştu!');
                     }
@@ -55,7 +53,7 @@ class Auth extends Controller
     public function logout()
     {
         auth()->logout();
-        header('Location:http://localhost/boilerplate');
+        return redirect()->send();
     }
 
 }

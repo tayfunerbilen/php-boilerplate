@@ -87,12 +87,6 @@ class Upload
         return $this;
     }
 
-    public function check()
-    {
-        $this->upload->process();
-        return $this;
-    }
-
     public function to($path)
     {
         if ($this->upload->uploaded) {
@@ -116,6 +110,7 @@ class Upload
 
     public function error()
     {
+        $this->upload->process();
         return $this->upload->error;
     }
 

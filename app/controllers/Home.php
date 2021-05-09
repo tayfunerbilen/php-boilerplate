@@ -43,7 +43,7 @@ class Home extends Controller
                 'content' => 'İçerik'
             ]);
 
-            $upload = upload('image')->onlyImages()->check();
+            $upload = upload('image')->onlyImages();
             if ($error = $upload->error()){
                 $this->validator->error('image', $error);
             }

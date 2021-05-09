@@ -1,0 +1,17 @@
+body {
+    background: lime;
+}
+
+.has-error {
+    border: 2px solid red;
+}
+.error-msg {
+    background: orangered;
+    color: #fff;
+    padding: 5px 10px;
+}
+.msg {
+    background: blue;
+    padding: 20px;
+    color: #fff;
+}
