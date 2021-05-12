@@ -4,5 +4,8 @@ return [
     'DB_NAME' => '',
     'DB_USER' => '',
     'DB_PASSWORD' => '',
-    'DEVELOPMENT' => true
+    'TIMEZONE' => '',
+    'LOCALE' => '',
+    'DEVELOPMENT' => true,
+    'BASE_URL' => ''
 ];
