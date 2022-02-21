@@ -50,8 +50,8 @@ class Home extends Controller
 
             if ($this->validator->validate()) {
 
-                $small = $upload->resize(500)->prefix('small')->to('upload/posts');
                 $original = $upload->to('upload/posts');
+                $small = $upload->resize(500)->prefix('small')->to('upload/posts');
 
                 $data = $this->validator->data();
                 $data['user_id'] = auth()->getId();
